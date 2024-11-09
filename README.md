@@ -67,3 +67,7 @@ Identification of key features that distinguish between iris species.
 A clear understanding of data distributions, relationships, and potential outliers.
 Foundational insights to inform predictive modeling and machine learning applications.
 This project demonstrates critical steps in EDA, providing a blueprint for effectively analyzing and understanding any dataset before applying machine learning techniques.
+
+SCREEN SHOT :
+![image](https://github.com/user-attachments/assets/966629f0-0941-4de9-a21d-22f79dd0118e)
+
