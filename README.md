@@ -70,4 +70,5 @@ This project demonstrates critical steps in EDA, providing a blueprint for effec
 
 SCREEN SHOT :
 ![image](https://github.com/user-attachments/assets/966629f0-0941-4de9-a21d-22f79dd0118e)
+![image](https://github.com/user-attachments/assets/9ce21114-f6bb-4cfc-8e53-6f8fed61df64)
 
