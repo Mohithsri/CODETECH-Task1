@@ -1,0 +1,59 @@
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+
+# Load the Iris dataset (replace the path if needed)
+df = pd.read_csv('https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv')
+
+# Display the first few rows
+print("First 5 rows of the dataset:")
+print(df.head())
+
+# Basic information about the dataset
+print("\nDataset Information:")
+print(df.info())
+
+# Check for missing values
+print("\nMissing values in each column:")
+print(df.isnull().sum())
+
+# Summary statistics
+print("\nSummary statistics of numerical columns:")
+print(df.describe())
+
+# Encode the 'species' column to numeric for correlation analysis
+df['species_encoded'] = LabelEncoder().fit_transform(df['species'])
+
+# Distribution of each numerical feature using histograms
+print("\nDistribution of numerical features:")
+df.hist(figsize=(15, 10), bins=20)
+plt.suptitle('Histogram of Numerical Features')
+plt.show()
+
+# Correlation matrix
+print("\nCorrelation matrix:")
+correlation_matrix = df.corr()
+print(correlation_matrix)
+
+# Heatmap of the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+plt.title('Heatmap of Correlation Matrix')
+plt.show()
+
+# Scatter plots for selected features (example: petal_length vs petal_width)
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='petal_length', y='petal_width', hue='species', data=df)
+plt.title('Scatter plot between Petal Length and Petal Width')
+plt.xlabel('Petal Length')
+plt.ylabel('Petal Width')
+plt.show()
+
+# Checking for outliers using boxplots (example: sepal_length)
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=df, x='sepal_length')
+plt.title('Boxplot of Sepal Length')
+plt.show()
